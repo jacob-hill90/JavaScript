@@ -1,0 +1,21 @@
+function SearchingChallenge(str){
+  
+  //Minimum username length of 5 and maximum of 25 characters
+  if(str.length < 4  || str.length > 25 ){return false}
+  
+  //First ASCII character must be a letter
+  var firstLetter = str.charAt(0).toUpperCase()
+  if(firstLetter.toLowerCase() == firstLetter) {return false}
+  
+  //Usnername cannot end with an underscore
+  if(str[str.length-1] === "_"){return false}
+
+  //Usnername must contain only letters, numbers, and the underscore symbol
+  if(str.includes('!','@','#','$','%','^','&','*','(',')','-','+','=',';',':','?','.','{','}')){
+    return false
+  }
+  else return true
+
+}
+
+console.log(SearchingChallenge('JohnSmith2353234'))
