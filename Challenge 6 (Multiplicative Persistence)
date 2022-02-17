@@ -1,0 +1,20 @@
+const multiply = (stringNumber) => {
+  const arrOfNumbers = stringNumber.split('')
+  let product = 1
+  arrOfNumbers.forEach(num => {
+    const number = Number(num)
+    product = product * number
+  })
+  return product.toString()
+}
+function MathChallenge (num) {
+  let stringNum = num.toString()
+  let counter = 0
+  while (stringNum.length > 1) {
+    stringNum = multiply(stringNum)
+    counter++
+  }
+  return counter
+}
+
+console.log(MathChallenge(89))
