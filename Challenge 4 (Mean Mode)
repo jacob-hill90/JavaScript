@@ -1,0 +1,36 @@
+function arrayChallenge(arr){
+  
+  let sum = 0, mean = 0;
+  var mode = [], count = [], i, number, maxIndex = 0;
+  
+  for(let i = 0; i < arr.length; i++){
+     sum += arr[i];
+     mean = (sum / arr.length);
+  }
+
+
+  for(let i = 0; i < arr.length; i+=1){
+    number = arr[i];
+    count[number] = (count[number] || 0) + 1;
+    if (count[number] > maxIndex){
+      maxIndex = count[number];
+    }
+  }
+
+  for (i in count)
+    if (count.hasOwnProperty(i)){
+      if (count[i] === maxIndex){
+        mode.push(Number(i));
+      }
+    }
+  
+if(mode == mean){
+  return 1;
+}
+else{
+  return 0;
+}
+
+}
+
+arrayChallenge([4,4,4,6,2])
