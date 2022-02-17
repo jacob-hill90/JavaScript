@@ -1,0 +1,36 @@
+function StringChallenge(strArr){
+  
+  let string = strArr[0]
+  let numRows = strArr[1]
+  
+  if(numRows == 1 || string.length < numRows){
+    return string}
+    
+  let rows = []
+  let currentRow = 0
+  let reverse = false
+  let result = ""
+
+  for(let i = 0; i < numRows; i++){
+    rows[i] = []}
+
+  for (let i = 0; i < string.length; i++) {
+    rows[currentRow].push(string[i])
+    if (reverse === false) {
+      currentRow++
+    } else {
+      currentRow--
+    }
+  
+  if (currentRow === numRows - 1 || currentRow === 0) {
+      reverse = !reverse
+    }
+  }
+  
+  rows.forEach((row) => {
+    result += row.join("")
+  })
+
+return result
+}
+console.log(StringChallenge(['test', '1']))
