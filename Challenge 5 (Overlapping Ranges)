@@ -1,0 +1,38 @@
+function ArrayChallenge(arr){
+  
+  let range1 = [], range2 = [], overlap = arr[4]
+  
+  for(i = arr[0]; i <= arr[1]; i++){
+    range1.push(i)
+  }
+  return range1
+  for(i = arr[2]; i <= arr[3]; i++){
+    range2.push(i)
+  }
+
+  let longestArray, shortestArray
+  if(range2.length > range1.length){
+    longestArray = range2
+    shortestArray = range1
+  }
+  else{
+    longestArray = range1
+    shortestArray = range2
+  }
+let duplicates = 0
+function includeNumber(number){
+    if (shortestArray.includes(number)) {
+      duplicates++
+    }
+
+}
+longestArray.forEach(includeNumber)
+
+  if(duplicates >= overlap){
+    return true
+  }
+  else{
+    return false
+  }
+}
+console.log(ArrayChallenge([5,11,1,5,1]))
